@@ -1,0 +1,12 @@
+.country{
+    width: 80px; 
+    height: 55px;
+    position: fixed;
+    top:0;
+    /*border: 1px solid red;*/
+    z-index: 1300;
+}
+.country img{
+    height: 55px;
+    z-index: 1500;
+}
