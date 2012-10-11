@@ -6,75 +6,65 @@
 // CWebApplication properties can be configured here.
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
-    'name' => 'Товары',
+    'name' => 'Stas',
     // preloading 'log' component
     'preload' => array('log'),
     // autoloading model and component classes
     'import' => array(
         'application.models.*',
         'application.components.*',
-        'application.extensions.*',
-        'application.extensions.libs.*',
-        'application.extensions.mail.Message',
-        'application.helpers.*',
+        'ext.yii-mail.YiiMailMessage',
+    ),
+    'aliases' => array(
+        //assuming you extracted the files to the extensions folder
+        'xupload' => 'ext.xupload'
+    ),
+    'modules' => array(
+        'admin' => array(
+            'defaultController' => 'default',
+            'layout' => 'bootstrap',
+        ),
     ),
     // application components
     'components' => array(
-        'gii'=>array(
-            'class'=>'system.gii.GiiModule',
-            'password'=>'1111',
+        'mail' => array(
+            'class' => 'ext.yii-mail.YiiMail',
+            'transportType' => 'smtp',
+            'viewPath' => 'application.views.site',
+            'logging' => true,
+            'dryRun' => false,
+            'transportOptions' => array(
+                'host' => 'smtp.gmail.com',
+                'username' => '',
+                'password' => '',
+                'port' => 465,
+                'encryption' => 'ssl'
+            )
         ),
         'user' => array(
             // enable cookie-based authentication
             'allowAutoLogin' => true,
-            'loginUrl' => 'admin/site/login',
-        ),
-        'mail' => array(
-            'class' => 'ext.mail.Mail', //set to the path of the extension
-            'transportType' => 'php',
-            'viewPath' => 'application.views.mail',
-            'debug' => false
+            'returnUrl' => "/admin/default"
         ),
         // uncomment the following to enable URLs in path-format
         'urlManager' => array(
-            'showScriptName' => false,
-//            'urlSuffix' => '.html',
             'urlFormat' => 'path',
             'rules' => array(
-                'gii' => 'gii',
-                'gii/<controller:\w+>'=>'gii/<controller>',
-                'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
-                'search' => 'product/index',
-                'admin' => 'admin/user/index',
-                'admin/<controller:\w+>/<id:\d+>' => 'admin/<controller>/view',
-                'admin/<controller:\w+>/<action:\w+>/<id:\d+>' => 'admin/<controller>/<action>',
-                'admin/<controller:\w+>/<action:\w+>' => 'admin/<controller>/<action>',
-                '<lang:[\w-]+>/destination/<region:\w+>' => 'site/destination',
-                '<lang:[\w-]+>/<action:about|contact|travelblogs|facebook|twitter|youtube|holidays|clearcache>' => 'site/<action>',
-                '<lang:[\w-]+>/<controller:\w+>/<id:[\w-]+>' => '<controller>/view',
-                '<lang:[\w-]+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                '<lang:[\w-]+>/<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-                '<lang:[\w-]+>/<controller:\w+>' => '<controller>/index',
-                '<lang:[\w-]+>' => 'site/index',
-                
-//                '<lang:\w+>/<controller:\w+>/<id:[\w-]+>' => '<controller>/view',
-//                '<lang:\w+>/<controller:\w+>/<action:\w+>/<id:[\w-]+>' => '<controller>/<action>',
-//                '<lang:\w+>/<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-//                '<lang:\w+>/<controller:\w+>' => '<controller>/index',
-//                '<lang:\w+>/' => 'site/index',
-                
+                '<controller:\w+>/<id:\d+>' => '<controller>/view',
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                '<view:\w+>.html' => 'site/page',
             ),
+            'showScriptName' => false,
+            'caseSensitive' => false
         ),
+        // uncomment the following to use a MySQL database
         'db' => array(
             'connectionString' => 'mysql:host=localhost;dbname=stas',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => 'test',
             'charset' => 'utf8',
-            'schemaCachingDuration' => 60 * 60 * 24
-        ),
-        'cache' => array(
-            'class' => 'CFileCache'
         ),
         'errorHandler' => array(
             // use 'site/error' action to display errors
@@ -83,52 +73,28 @@ return array(
         'log' => array(
             'class' => 'CLogRouter',
             'routes' => array(
-                /* array(
-                  'class'=>'EmailLogRoute',
-                  'levels'=>'error, warning',
-                  'emails'=>'vanotis+dev@gmail.com',
-                  'filter'=>array(
-                  'class'=>'LogFilter',
-                  'ignoreCategories'=>array(
-                  'exception.CHttpException.404'
-                  )
-                  ),
-
-                  ), */
-
                 array(
                     'class' => 'CFileLogRoute',
-                    'levels' => 'error, warning, info',
+                    'levels' => 'error, warning',
                 ),
-            /* array(
-              'class'=>'CWebLogRoute',
-              ), */
+            // uncomment the following to show log messages on web pages
             ),
         ),
-    ),
-    'modules' => array(
-        'admin' => array(
-            //'layout' => 'admin',
-            'defaultController' => 'users',
-        /* 'password'=>'1111', */
-        /* 'registerModels'=>array(
-          'application.models.*',
-          ), */
-        ),
-        'gii' => array(
-            'class' => 'system.gii.GiiModule',
-            'password' => '1111',
-            // If removed, Gii defaults to localhost only. Edit carefully to taste.
-            'ipFilters' => array('127.0.0.1', '::1'),
+        'cache' => array(
+            'class' => 'CFileCache',
         ),
     ),
     // application-level parameters that can be accessed
     // using Yii::app()->params['paramName']
-    'params' => array(
-        // this is used in contact page
-        'supportEmail' => 'mchlschwarz8@googlemail.com',
-        'adminEmail' => 'vanotis+dev@gmail.com',
-        'redirectK' => 10,
-        'itemsLimit' => 12,
+    'params' => require(dirname(__FILE__) . '/params.php'),
+    'modules' => array(
+        'admin' => array(
+            'defaultController' => 'default',
+        ),
+        'gii' => array(
+            'class' => 'system.gii.GiiModule',
+            'password' => '1111',
+            'ipFilters' => array('127.0.0.1', '::1'),
+        ),
     ),
 );

@@ -1,24 +1,18 @@
 <?php
 
 /**
- * This is the model class for table "products".
+ * This is the model class for table "users".
  *
- * The followings are the available columns in table 'products':
+ * The followings are the available columns in table 'users':
  * @property string $id
- * @property string $title
- * @property string $description
- * @property string $image_extension
- * @property string $price
- * @property string $firm_id
- *
- * The followings are the available model relations:
- * @property Firms $firm
+ * @property string $login
+ * @property string $password
  */
-class Product extends CActiveRecord
+class User extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @return Product the static model class
+	 * @return User the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -30,7 +24,7 @@ class Product extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'products';
+		return 'users';
 	}
 
 	/**
@@ -41,14 +35,11 @@ class Product extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, description, price, firm_id', 'required'),
-			array('title', 'length', 'max'=>128),
-			array('image_extension, price', 'length', 'max'=>8),
-			array('firm_id', 'length', 'max'=>11),
-			array('image_extension', 'file'),
+			array('login, password', 'required'),
+			array('login, password', 'length', 'max'=>64),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, title, description, image_extension, price, firm_id', 'safe', 'on'=>'search'),
+			array('id, login, password', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,7 +51,6 @@ class Product extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'firm' => array(self::BELONGS_TO, 'Firms', 'firm_id'),
 		);
 	}
 
@@ -71,11 +61,8 @@ class Product extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'description' => 'Description',
-			'image_extension' => 'Image Extension',
-			'price' => 'Price',
-			'firm_id' => 'Firm',
+			'login' => 'Login',
+			'password' => 'Password',
 		);
 	}
 
@@ -91,11 +78,8 @@ class Product extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('description',$this->description,true);
-		$criteria->compare('image_extension',$this->image_extension,true);
-		$criteria->compare('price',$this->price,true);
-		$criteria->compare('firm_id',$this->firm_id,true);
+		$criteria->compare('login',$this->login,true);
+		$criteria->compare('password',$this->password,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
