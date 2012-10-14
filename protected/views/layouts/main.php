@@ -5,24 +5,29 @@
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
         <link href="<?php echo yii::app()->baseUrl ?>/favicon.ico" rel="shortcut icon" />
         <?php
-            $cs = yii::app()->clientScript;
-            $cs->registerCoreScript('jquery');
-            $cs->registerScriptFile(yii::app()->baseUrl . '/js/script.js', CClientScript::POS_HEAD);
-            $cs->registerCssFile(yii::app()->baseUrl . '/css/styles.css', 'all');
+        $cs = yii::app()->clientScript;
+        $cs->registerCoreScript('jquery');
+        $cs->registerScriptFile(yii::app()->baseUrl . '/js/script.js', CClientScript::POS_HEAD);
+        $cs->registerCssFile(yii::app()->baseUrl . '/css/styles.css', 'all');
         ?>	
     </head>
     <body>
         <div class="container">
             <div class="header">
                 <div class="mainmenu">
-
+                    <?php
+                    $this->widget('application.components.CustomMenu', array(
+                        'items' => $this->menu,
+                        'id' => 'left-menu',
+                    ));
+                    ?>
                 </div>
             </div>
             <div class="mainbody">
-                <?php  echo $content; ?>
+                <?php echo $content; ?>
             </div>
             <div class="footer">
-                
+
             </div>
         </div>
     </body>

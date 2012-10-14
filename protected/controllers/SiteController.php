@@ -3,9 +3,8 @@
 class SiteController extends Controller
 {
 
-    /**
-     * Declares class-based actions.
-     */
+    public $firms;
+    
     public function actions()
     {
         return array(
@@ -28,7 +27,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->firms = Firm::model()->findAll();
         $this->render('index');
+    }
+    
+    public function productsAction() {
+        
     }
 
 

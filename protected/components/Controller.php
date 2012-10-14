@@ -4,7 +4,8 @@
  * Controller is the customized base controller class.
  * All controller classes for this application should extend from this base class.
  */
-class Controller extends CController {
+class Controller extends CController
+{
 
     /**
      * @var string the default layout for the controller view. Defaults to '//layouts/column1',
@@ -12,15 +13,20 @@ class Controller extends CController {
      */
     public $layout = 'main';
     public $breadcrumbs = array();
+
     /**
      * @var array context menu items. This property will be assigned to {@link CMenu::items}.
      */
     public $menu = array();
 
-
-    public function init() {
-
+    public function init()
+    {
+        Yii::app()->clientScript->registerCssFile('/bootstrap/css/bootstrap.css', 'screen, projection');
+        $this->menu = array(
+            array('label' => 'Главная', 'url' => $this->createUrl('/')),
+            array('label' => 'О нас', 'url' => $this->createUrl('/about')),
+            array('label' => 'Контакты', 'url' => $this->createUrl('/contatcs')),
+        );
     }
-
 
 }

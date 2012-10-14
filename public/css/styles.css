@@ -1,4 +1,28 @@
-.container {
-    width: 960px;
-    margin: 0 auto;
+.clear {
+    clear:both;
+    height:0;
+    font-size: 0px;
+    line-height: 0px;
 }
+
+ul.yiiPager .first, ul.yiiPager .last {
+    display: inline;
+}
+
+.lineelement {
+    display: inline;
+    float: left;
+}
+
+div.product-info {
+    margin-left: 10px;
+    width: 670px;
+}
+.pager .previous a {
+    float: none;
+}
+    
+.product-list tr td {
+    vertical-align: middle;
+}
+    

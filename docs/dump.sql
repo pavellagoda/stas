@@ -25,11 +25,11 @@ CREATE TABLE `firms` (
   `name` varchar(64) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `firms` */
 
-insert  into `firms`(`id`,`name`,`description`) values (1,'Viko','Viko');
+insert  into `firms`(`id`,`name`,`description`) values (1,'Viko','Viko'),(2,'Test','');
 
 /*Table structure for table `products` */
 
@@ -45,11 +45,11 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `FK_products_firm_id_firms_id` (`firm_id`),
   CONSTRAINT `FK_products_firm_id_firms_id` FOREIGN KEY (`firm_id`) REFERENCES `firms` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `products` */
 
-insert  into `products`(`id`,`title`,`description`,`image_extension`,`price`,`firm_id`) values (1,'Розетка','авыа','gif','25',1);
+insert  into `products`(`id`,`title`,`description`,`image_extension`,`price`,`firm_id`) values (1,'Розетка','Описание розетки Вико','jpg','25',1),(2,'Розетка Тест','Тест','gif','30',2);
 
 /*Table structure for table `users` */
 
