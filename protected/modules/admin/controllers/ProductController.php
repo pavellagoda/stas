@@ -89,12 +89,19 @@ class ProductController extends AdminController
     public function actionDelete($id)
     {
         if (Yii::app()->request->isPostRequest) {
-            // we only allow deletion via POST request
-            $this->loadModel($id)->delete();
+
+            $model = $this->loadModel($id);
+            $file_name = Yii::app()->params['PRODUCT_IMAGE_FOLDER'] . '/' . $model->id . '.' . $model->image_extension;
+            
+            if(is_file($file_name)) {
+                unlink($file_name);
+            }
+            
+            $model->delete();
 
             // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
             if (!isset($_GET['ajax']))
-                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
         }
         else
             throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
