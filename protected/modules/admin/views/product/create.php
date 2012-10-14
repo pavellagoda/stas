@@ -5,11 +5,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Product', 'url'=>array('index')),
-	array('label'=>'Manage Product', 'url'=>array('admin')),
+	array('label'=>'Список товаров', 'url'=>array('index')),
 );
 ?>
 
-<h1>Create Product</h1>
+<h1>Товар</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

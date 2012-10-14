@@ -45,9 +45,11 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `FK_products_firm_id_firms_id` (`firm_id`),
   CONSTRAINT `FK_products_firm_id_firms_id` FOREIGN KEY (`firm_id`) REFERENCES `firms` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 /*Data for the table `products` */
+
+insert  into `products`(`id`,`title`,`description`,`image_extension`,`price`,`firm_id`) values (1,'Розетка','авыа','gif','25',1);
 
 /*Table structure for table `users` */
 

@@ -41,11 +41,18 @@ class Product extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, description, price, firm_id', 'required'),
+			array('title, description, price, firm_id', 'required', 'message' => "заполните поле {attribute}"),
 			array('title', 'length', 'max'=>128),
-			array('image_extension, price', 'length', 'max'=>8),
+			array('price', 'length', 'max'=>8),
 			array('firm_id', 'length', 'max'=>11),
-			array('image_extension', 'file'),
+			array(
+                            'image_extension', 'file', 
+                            'types'=>'jpg, jpeg, png, gif',
+                            'maxSize' => 1024 * 1024 * 5,
+                            'tooLarge' => 'вы загрузили слишком большой файл. Загрузите файл менее 5 Мб',
+                            'allowEmpty' => !$this->isNewRecord,
+                            'wrongType' => 'Файл {file} не может быть загружен. Загрузить можно файл формата {extensions}',
+                            'message' => "Выберите {attribute}"),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, title, description, image_extension, price, firm_id', 'safe', 'on'=>'search'),
@@ -71,11 +78,11 @@ class Product extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'description' => 'Description',
-			'image_extension' => 'Image Extension',
-			'price' => 'Price',
-			'firm_id' => 'Firm',
+			'title' => 'Название',
+			'description' => 'Описание',
+			'image_extension' => 'Изображение',
+			'price' => 'Цена',
+			'firm_id' => 'Производитель',
 		);
 	}
 

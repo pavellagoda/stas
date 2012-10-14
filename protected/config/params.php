@@ -1,7 +1,5 @@
 <?php
 
 return array(
-    'adminLogin' => 'admin',
-    'VIDEO_FOLDER' => realpath(dirname(__FILE__) . '/../../uploaded_files/video'),
-    'PRESENTATION_FOLDER' => realpath(dirname(__FILE__) . '/../../uploaded_files/presentations'),
+    'PRODUCT_IMAGE_FOLDER' => realpath(dirname(__FILE__)) . '/../../public/uploaded_files/products',
 );

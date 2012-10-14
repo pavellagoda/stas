@@ -3,11 +3,10 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'product-form',
 	'enableAjaxValidation'=>false,
+        'htmlOptions'=>array('enctype' => 'multipart/form-data'),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'title'); ?>
@@ -23,24 +22,24 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'image_extension'); ?>
-		<?php echo $form->textField($model,'image_extension',array('size'=>8,'maxlength'=>8)); ?>
+		<?php echo $form->fileField($model,'image_extension'); ?>
 		<?php echo $form->error($model,'image_extension'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'price'); ?>
-		<?php echo $form->textField($model,'price',array('size'=>8,'maxlength'=>8)); ?>
+		<?php echo $form->textField($model,'price',array('size'=>8,'maxlength'=>8)); ?> грн
 		<?php echo $form->error($model,'price'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'firm_id'); ?>
-		<?php echo $form->textField($model,'firm_id',array('size'=>11,'maxlength'=>11)); ?>
+		<?php echo $form->dropDownList($model,'firm_id', CHtml::listData(Firm::model()->findAll(), 'id', 'name')); ?>
 		<?php echo $form->error($model,'firm_id'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
