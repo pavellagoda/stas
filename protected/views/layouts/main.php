@@ -18,7 +18,7 @@
                     <?php
                     $this->widget('application.components.CustomMenu', array(
                         'items' => $this->menu,
-                        'id' => 'left-menu',
+                        'id' => 'main-menu',
                     ));
                     ?>
                 </div>

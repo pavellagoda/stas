@@ -22,7 +22,12 @@
     <td>
         <?php
         echo CHtml::ajaxLink(
-                'В корзину <i class="icon-trash icon-white"></i>', $this->createUrl('ajax/cart', array('id' => $data->id)), array(), array('class' => 'btn btn-success')
+                'В корзину <i class="icon-trash icon-white"></i>',
+                $this->createUrl('ajax/cart', array('id' => $data->id)), 
+                array('success' => 'function(data){
+                        $("li.cart a").html("Корзина("+data+")")
+                    }'),
+                array('class' => 'btn btn-success',)
         )
         ?>
     </td>
