@@ -27,7 +27,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->firms = Firm::model()->findAll();
+//        $this->firms = Firm::model()->findAll();
+        Yii::app()->clientScript->registerCoreScript('jquery');
+        Yii::app()->clientScript->registerScriptFile('/js/index.js', CClientScript::POS_HEAD);
         $this->render('index');
     }
     

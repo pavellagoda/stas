@@ -26,3 +26,15 @@ div.product-info {
     vertical-align: middle;
 }
     
+#firm span.firm-block label {
+    display: inline;
+    margin-right: 5px;
+}
+
+#firm span.firm-block {
+    margin-right: 10px;
+}
+
+span#firm {
+    margin: 0 50px 0 3px;
+}
