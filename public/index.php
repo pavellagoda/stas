@@ -7,7 +7,7 @@ ini_set('upload_max_filesize', '128M');
 
 ini_set('display_errors', 1);
 // change the following paths if necessary
-$yii=dirname(__FILE__).'/../../yii/yii.php';
+$yii=dirname(__FILE__).'/../../yii/framework/yii.php';
 $config = dirname(__FILE__) . '/../protected/config/main.php';
 
 

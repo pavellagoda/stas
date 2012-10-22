@@ -1105,3 +1105,555 @@ Stack trace:
 #1 E:\www\yii\base\CApplication.php(158): CWebApplication->processRequest()
 #2 E:\www\stas.dev.com\public\index.php(22): CApplication->run()
 #3 {main} REQUEST_URI=/favicon.ico
+2012/10/17 17:50:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/17 17:50:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/17 17:51:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ajax/cart".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('ajax/cart')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/ajax/cart/1?_=1350485465776
+HTTP_REFERER=http://stas.dev.com/
+---
+2012/10/17 17:51:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/17 17:51:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/17 17:51:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ajax/cart".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('ajax/cart')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/ajax/cart/2?_=1350485478400
+HTTP_REFERER=http://stas.dev.com/
+---
+2012/10/18 10:16:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/18 10:39:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'stas.firms' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `firms`.
+in /home/pasha/www/stas.dev.com/protected/models/Firm.php (19)
+in /home/pasha/www/stas.dev.com/protected/views/site/index.php (6)
+in /home/pasha/www/stas.dev.com/protected/controllers/SiteController.php (33)
+2012/10/18 10:39:47 [error] [exception.CDbException] exception 'CDbException' with message 'The table "firms" for active record class "Firm" cannot be found in the database.' in /home/pasha/www/yii/framework/db/ar/CActiveRecord.php:2264
+Stack trace:
+#0 /home/pasha/www/yii/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Firm))
+#1 /home/pasha/www/stas.dev.com/protected/models/Firm.php(19): CActiveRecord::model('Firm')
+#2 /home/pasha/www/stas.dev.com/protected/views/site/index.php(6): Firm::model()
+#3 /home/pasha/www/yii/framework/web/CBaseController.php(127): require('/home/pasha/www...')
+#4 /home/pasha/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/home/pasha/www...', NULL, true)
+#5 /home/pasha/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/home/pasha/www...', NULL, true)
+#6 /home/pasha/www/yii/framework/web/CController.php(783): CController->renderPartial('index', NULL, true)
+#7 /home/pasha/www/stas.dev.com/protected/controllers/SiteController.php(33): CController->render('index')
+#8 /home/pasha/www/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#9 /home/pasha/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /home/pasha/www/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#11 /home/pasha/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/pasha/www/yii/framework/web/CWebApplication.php(276): CController->run('')
+#13 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#14 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2012/10/18 10:39:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/18 10:40:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/18 10:41:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "cart".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('cart')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/cart
+HTTP_REFERER=http://stas.dev.com/
+---
+2012/10/18 10:41:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/18 10:41:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/18 10:41:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "about".' in /home/pasha/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CController.php(271): CController->missingAction('about')
+#1 /home/pasha/www/yii/framework/web/CWebApplication.php(276): CController->run('about')
+#2 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('site/about')
+#3 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#5 {main}
+REQUEST_URI=/about
+HTTP_REFERER=http://stas.dev.com/
+---
+2012/10/18 10:41:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/18 10:41:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 13:46:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 13:48:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:30:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:36:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:40:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:42:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:42:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:43:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:43:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:45:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:45:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:46:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:47:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:47:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:48:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:50:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:51:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:51:24 [error] [php] Undefined variable: dataProvider (/home/pasha/www/stas.dev.com/protected/controllers/SiteController.php:40)
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CController.php(287): SiteController->runAction()
+#1 /home/pasha/www/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#2 /home/pasha/www/yii/framework/web/CWebApplication.php(276): SiteController->run()
+#3 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#4 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#5 /home/pasha/www/stas.dev.com/public/index.php(22): CWebApplication->run()
+REQUEST_URI=/?checked%5B%5D=1&ajax=ajaxListView
+in /home/pasha/www/stas.dev.com/protected/controllers/SiteController.php (40)
+in /home/pasha/www/stas.dev.com/public/index.php (22)
+2012/10/22 14:51:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:51:46 [error] [exception.CException] exception 'CException' with message 'The "dataProvider" property cannot be empty.' in /home/pasha/www/yii/framework/zii/widgets/CBaseListView.php:103
+Stack trace:
+#0 /home/pasha/www/yii/framework/zii/widgets/CListView.php(173): CBaseListView->init()
+#1 /home/pasha/www/yii/framework/web/CBaseController.php(148): CListView->init()
+#2 /home/pasha/www/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#3 /home/pasha/www/stas.dev.com/protected/views/site/index.php(50): CBaseController->widget('zii.widgets.CLi...', Array)
+#4 /home/pasha/www/yii/framework/web/CBaseController.php(127): require('/home/pasha/www...')
+#5 /home/pasha/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/home/pasha/www...', Array, true)
+#6 /home/pasha/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/home/pasha/www...', Array, true)
+#7 /home/pasha/www/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#8 /home/pasha/www/stas.dev.com/protected/controllers/SiteController.php(41): CController->render('index', Array)
+#9 /home/pasha/www/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#10 /home/pasha/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /home/pasha/www/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /home/pasha/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /home/pasha/www/yii/framework/web/CWebApplication.php(276): CController->run('')
+#14 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#15 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#17 {main}
+REQUEST_URI=/?checked%5B%5D=1&ajax=ajaxListView
+HTTP_REFERER=http://stas.dev.com/
+---
+2012/10/22 14:53:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:53:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:54:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:54:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "about".' in /home/pasha/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CController.php(271): CController->missingAction('about')
+#1 /home/pasha/www/yii/framework/web/CWebApplication.php(276): CController->run('about')
+#2 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('site/about')
+#3 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#5 {main}
+REQUEST_URI=/about
+HTTP_REFERER=http://stas.dev.com/
+---
+2012/10/22 14:54:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:54:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:55:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:56:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:56:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:57:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:58:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:58:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 14:59:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 15:04:16 [error] [php] Object of class CDbCriteria could not be converted to string (/home/pasha/www/stas.dev.com/protected/controllers/SiteController.php:40)
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CController.php(287): SiteController->runAction()
+#1 /home/pasha/www/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#2 /home/pasha/www/yii/framework/web/CWebApplication.php(276): SiteController->run()
+#3 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#4 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#5 /home/pasha/www/stas.dev.com/public/index.php(22): CWebApplication->run()
+REQUEST_URI=/site/index?ajax=ajaxListView&Product_sort=title&firm%5B%5D=1
+in /home/pasha/www/stas.dev.com/protected/controllers/SiteController.php (40)
+in /home/pasha/www/stas.dev.com/public/index.php (22)
+2012/10/22 15:05:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 15:05:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 15:06:04 [error] [php] implode(): Invalid arguments passed (/home/pasha/www/stas.dev.com/protected/controllers/SiteController.php:38)
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#1 /home/pasha/www/yii/framework/web/CController.php(287): SiteController->runAction()
+#2 /home/pasha/www/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#3 /home/pasha/www/yii/framework/web/CWebApplication.php(276): SiteController->run()
+#4 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#5 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /home/pasha/www/stas.dev.com/public/index.php(22): CWebApplication->run()
+REQUEST_URI=/?ajax=ajaxListView
+in /home/pasha/www/stas.dev.com/protected/controllers/SiteController.php (38)
+in /home/pasha/www/stas.dev.com/public/index.php (22)
+2012/10/22 15:06:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 15:06:51 [error] [php] implode(): Invalid arguments passed (/home/pasha/www/stas.dev.com/protected/controllers/SiteController.php:37)
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#1 /home/pasha/www/yii/framework/web/CController.php(287): SiteController->runAction()
+#2 /home/pasha/www/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#3 /home/pasha/www/yii/framework/web/CWebApplication.php(276): SiteController->run()
+#4 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#5 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /home/pasha/www/stas.dev.com/public/index.php(22): CWebApplication->run()
+REQUEST_URI=/?ajax=ajaxListView
+in /home/pasha/www/stas.dev.com/protected/controllers/SiteController.php (37)
+in /home/pasha/www/stas.dev.com/public/index.php (22)
+2012/10/22 15:07:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 15:08:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 15:09:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 15:09:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 15:10:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "products/view".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('products/view')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/products/1
+HTTP_REFERER=http://stas.dev.com/
+---
+2012/10/22 15:10:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/10/22 15:10:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/pasha/www/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/pasha/www/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/pasha/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/pasha/www/stas.dev.com/public/index.php(22): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---

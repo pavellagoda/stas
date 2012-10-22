@@ -12,7 +12,7 @@ $checkboxes = CHtml::checkBoxList(
 );
 
 $widget = $this->widget('zii.widgets.CListView', array(
-    'dataProvider' => Product::model()->search(10),
+    'dataProvider' => $data,
     'itemView' => '_item',
     'id' => 'ajaxListView',
     'template' => '{sorter}<br />
