@@ -24,9 +24,10 @@ class Controller extends CController
         Yii::app()->clientScript->registerCssFile('/bootstrap/css/bootstrap.css', 'screen, projection');
         $cartCount = Cart::getCountElements();
         $this->menu = array(
-            array('label' => 'Главная', 'url' => $this->createUrl('/')),
+            array('label' => 'Главная', 'url' => '/'),
             array('label' => 'О нас', 'url' => $this->createUrl('/about')),
-            array('label' => 'Контакты', 'url' => $this->createUrl('/contatcs')),
+            array('label' => 'Контакты', 'url' => $this->createUrl('/contacts')),
+            array('label' => 'Оплата и доставка', 'url' => $this->createUrl('/payment')),
             array('label' => 'Корзина('.$cartCount.')', 'url' => $this->createUrl('/cart'), 'itemOptions' => array('class' => 'cart')),
         );
     }

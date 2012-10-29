@@ -10,6 +10,7 @@
  * @property string $image_extension
  * @property string $price
  * @property string $firm_id
+ * @property string $status
  *
  * The followings are the available model relations:
  * @property Firms $firm
@@ -44,6 +45,7 @@ class Product extends CActiveRecord
         return array(
             array('title, description, price, firm_id', 'required', 'message' => "заполните поле {attribute}"),
             array('title', 'length', 'max' => 128),
+            array('price', 'type', 'type'=>'float', 'message' => "Цена должна быть введена в формате HH,KK или HH.KK"),
             array('price', 'length', 'max' => 8),
             array('firm_id', 'length', 'max' => 11),
             array(
@@ -84,6 +86,7 @@ class Product extends CActiveRecord
             'image_extension' => 'Изображение',
             'price' => 'Цена',
             'firm_id' => 'Производитель',
+            'firm.name' => 'Производитель',
         );
     }
 
@@ -104,6 +107,7 @@ class Product extends CActiveRecord
         $criteria->compare('image_extension', $this->image_extension, true);
         $criteria->compare('price', $this->price, true);
         $criteria->compare('firm_id', $this->firm_id, true);
+        $criteria->compare('status', 'active', true);
         $criteria->with = array('firm');
 
         return new CActiveDataProvider($this, array(

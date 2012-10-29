@@ -55,6 +55,7 @@ return array(
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
                 'contacts'=>'site/contacts',
                 'about'=>'site/about',
+                'payment'=>'site/payment',
             ),
             'showScriptName' => false,
             'caseSensitive' => false

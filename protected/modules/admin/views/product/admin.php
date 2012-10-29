@@ -39,10 +39,8 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'id',
 		'title',
-		'description',
-		'image_extension',
 		'price',
-		'firm_id',
+		'firm.name',
 		array(
 			'class'=>'CButtonColumn',
 		),

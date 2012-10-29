@@ -91,13 +91,15 @@ class ProductController extends AdminController
         if (Yii::app()->request->isPostRequest) {
 
             $model = $this->loadModel($id);
-            $file_name = Yii::app()->params['PRODUCT_IMAGE_FOLDER'] . '/' . $model->id . '.' . $model->image_extension;
-            
-            if(is_file($file_name)) {
-                unlink($file_name);
-            }
-            
-            $model->delete();
+            $model->status = 'disabled';
+            $model->save();
+//            $file_name = Yii::app()->params['PRODUCT_IMAGE_FOLDER'] . '/' . $model->id . '.' . $model->image_extension;
+//            
+//            if(is_file($file_name)) {
+//                unlink($file_name);
+//            }
+//            
+//            $model->delete();
 
             // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
             if (!isset($_GET['ajax']))
@@ -138,6 +140,8 @@ class ProductController extends AdminController
                 $_POST['Product']['image_extension'] = $extention;
             }
 
+            $_POST['Product']['price'] = str_replace(',', '.', $_POST['Product']['price']);
+            
             $model->attributes = $_POST['Product'];
 
             if ($model->save()) {

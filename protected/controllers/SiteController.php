@@ -3,31 +3,22 @@
 class SiteController extends Controller
 {
 
-    public $firms;
-
-    public function actions()
+    public function actionAbout()
     {
-        return array(
-            // captcha action renders the CAPTCHA image displayed on the contact page
-            'captcha' => array(
-                'class' => 'CCaptchaAction',
-                'backColor' => 0xFFFFFF,
-            ),
-            // page action renders "static" pages stored under 'protected/views/site/pages'
-            // They can be accessed via: index.php?r=site/page&view=FileName
-            'page' => array(
-                'class' => 'CViewAction',
-            ),
-        );
+        $this->render('about');
     }
 
-    /**
-     * This is the default 'index' action that is invoked
-     * when an action is not explicitly requested by users.
-     */
+    public function actionContacts()
+    {
+        $this->render('contacts');
+    }
+    public function actionPayment()
+    {
+        $this->render('payment');
+    }
+
     public function actionIndex()
     {
-//        Yii::app()->clientScript->registerCoreScript('jquery');
         Yii::app()->clientScript->registerScriptFile('/js/index.js', CClientScript::POS_HEAD);
 
         $request = Yii::app()->request;
@@ -36,7 +27,7 @@ class SiteController extends Controller
             $criteria = new CDbCriteria;
             if ($request->getParam('firm')) {
                 $firms = implode($request->getParam('firm'), ',');
-                $criteria->condition = "firm_id IN (".$firms.")";
+                $criteria->condition = "firm_id IN (" . $firms . ")";
             }
             $dataProvider = new CActiveDataProvider('Product', array(
                         'criteria' => $criteria,
@@ -50,10 +41,4 @@ class SiteController extends Controller
 
         $this->render('index', array('data' => $dataProvider));
     }
-
-    public function productsAction()
-    {
-        
-    }
-
 }

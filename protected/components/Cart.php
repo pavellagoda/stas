@@ -4,8 +4,11 @@ class Cart
 {
     public static function getCountElements() {
         $session = Yii::app()->session;
-        if(isset($session['cart'])) {
-            $count = count($session['cart']);
+        if(isset($session['cart']) && count($session['cart'])) {
+            $count = 0;
+            foreach($session['cart'] as $tmp) {
+                $count += $tmp['count'];
+            }
             if($count == 1) {
                 $res = $count.' товар';
             } elseif($count > 1 && $count < 5) {
