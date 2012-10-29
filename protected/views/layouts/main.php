@@ -7,7 +7,6 @@
         <?php
         $cs = yii::app()->clientScript;
         $cs->registerCoreScript('jquery');
-        $cs->registerScriptFile(yii::app()->baseUrl . '/js/script.js', CClientScript::POS_HEAD);
         $cs->registerCssFile(yii::app()->baseUrl . '/css/styles.css', 'all');
         ?>	
     </head>

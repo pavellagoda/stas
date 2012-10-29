@@ -1,10 +1,6 @@
 <?php 
-    $widget = $this->widget('zii.widgets.CListView', array(
-    'dataProvider' => $data,
-    'itemView' => '_item',
-    'id' => 'ajaxListView',
-    'template' => '{sorter}<br />
-        <table class="table table-striped product-list">
+
+    $template = $data->itemCount?'<table class="table table-striped product-list">
             <thead>
                 <tr>
                     <th>&nbsp;</th>
@@ -19,7 +15,12 @@
                 {items}
             </tbody>
         </table>
-        {pager}',
+        {pager}':'Ваша корзина пуста';
+    $widget = $this->widget('zii.widgets.CListView', array(
+    'dataProvider' => $data,
+    'itemView' => '_item',
+    'id' => 'ajaxListView',
+    'template' => $template,
     'enableSorting' => true,
     'pager' => array(
         'header' => 'Страницы: ',

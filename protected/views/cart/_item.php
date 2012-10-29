@@ -20,7 +20,7 @@
         <p><?php echo $data['model']->price ?></p>
     </td>
     <td width="100px">
-        <p><?php echo $data['count'] ?> шт</p>
+        <p><input type="text" item_id="<?php echo $data['model']->id ?>" class="items-count" value="<?php echo $data['count'] ?>"/> шт</p>
     </td>
     <td width="150px">
         <p><?php echo $data['model']->price * $data['count']; ?></p>
@@ -31,8 +31,7 @@
                 'Удалить <i class="icon-trash icon-white"></i>',
                 $this->createUrl('ajax/deleteitem', array('id' => $data['model']->id)), 
                 array('success' => 'function(data){
-                        $.fn.yiiListView.update("ajaxListView")
-                        $("li.cart a").html("Корзина("+data+")")
+                        window.location.href = "/cart";
                     }'),
                 array('class' => 'btn btn-danger remove-element',)
         )

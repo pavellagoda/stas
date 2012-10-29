@@ -5,6 +5,7 @@ class CartController extends Controller
 
     public function actionIndex()
     {
+        yii::app()->clientScript->registerScriptFile(yii::app()->baseUrl . '/js/script.js', CClientScript::POS_HEAD);
         $dataProvider = new CArrayDataProvider($this->prepareCart(), array(
                     'pagination' => array(
                         'pageSize' => 20,

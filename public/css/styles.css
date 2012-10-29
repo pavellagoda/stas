@@ -65,3 +65,7 @@ span#firm {
     margin-top: 10px;
 }
 
+
+input.items-count {
+    width: 50px;
+}

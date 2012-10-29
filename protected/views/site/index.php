@@ -47,5 +47,5 @@ $widget = $this->widget('zii.widgets.CListView', array(
         'price' => 'По цене',
         'firm_id' => 'По производителю',
     ),
-        ));
+    ));
 ?>
