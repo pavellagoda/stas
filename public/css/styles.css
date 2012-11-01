@@ -5,6 +5,38 @@
     line-height: 0px;
 }
 
+
+body {
+    background-image: url('../i/header_bg.gif');
+    background-repeat: repeat-x;
+}
+
+.container {
+    width: 1000px;
+}
+
+
+#main-menu.ul {
+    display: inline;
+}
+
+#main-menu li {
+    float: left;
+    list-style: none;
+    text-align: center;
+    background-image: url('../i/menu_item_bg.png');
+    padding-top: 10px;
+}
+
+#main-menu li a {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #000;
+    width: 189px;
+    height: 33px;
+    display: block;
+}
+
 ul.yiiPager .first, ul.yiiPager .last {
     display: inline;
 }
@@ -14,6 +46,11 @@ ul.yiiPager .first, ul.yiiPager .last {
     float: left;
 }
 
+.lineelement.right {
+    float: right;
+}
+    
+
 div.product-info {
     margin-left: 10px;
     width: 670px;
@@ -21,23 +58,16 @@ div.product-info {
 .pager .previous a {
     float: none;
 }
-    
+
 .product-list tr td {
     vertical-align: middle;
 }
-    
-#firm span.firm-block label {
+
+#firm div.firm-block label {
     display: inline;
     margin-right: 5px;
 }
 
-#firm span.firm-block {
-    margin-right: 10px;
-}
-
-span#firm {
-    margin: 0 50px 0 3px;
-}
 
 .product-description {
     margin: 30px 0;
@@ -46,7 +76,7 @@ span#firm {
 .product-description h2 {
     text-align: center;
     margin: 15px 0;
-    
+
 }
 
 .product-description img {
@@ -69,3 +99,40 @@ span#firm {
 input.items-count {
     width: 50px;
 }
+
+.left-part {
+    width: 350px;
+}
+
+.right-part {
+    width: 600px;
+}
+
+.logo-element {
+    width: 319px;
+    height: 211px;
+    background-image: url('../i/logo_bg.png');
+    background-position-x: -35px;
+    background-repeat: no-repeat 
+}
+.wellcome-element {
+    width: 600px;
+    height: 204px;
+    background-image: url('../i/wellcome_bg.png');
+    background-repeat: no-repeat 
+}
+
+.items .item {
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.items .item:hover {
+    background-color: #eceff8;
+}
+
+.items .item .item-name, .items .item .item-price, .items .item a.btn {
+    margin-top: 5px;
+}
+
+

@@ -20,8 +20,19 @@
                         'id' => 'main-menu',
                     ));
                     ?>
+                    <div class="clear"></div>
                 </div>
             </div>
+            <div class="clear"></div>
+            <div class="left-part lineelement">
+                <div class="logo-element"></div>
+            </div>
+            <div class="right-part lineelement right">
+                <div class="wellcome-element">
+                    Добро пожаловать на на сайт!
+                </div>
+            </div>
+            <div class="clear"></div>
             <div class="mainbody">
                 <?php echo $content; ?>
             </div>

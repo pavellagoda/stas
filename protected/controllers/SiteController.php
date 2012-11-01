@@ -32,11 +32,11 @@ class SiteController extends Controller
             $dataProvider = new CActiveDataProvider('Product', array(
                         'criteria' => $criteria,
                         'pagination' => array(
-                            'pageSize' => 10,
+                            'pageSize' => 12,
                         ),
                     ));
         } else {
-            $dataProvider = Product::model()->search(10);
+            $dataProvider = Product::model()->search(12);
         }
 
         $this->render('index', array('data' => $dataProvider));
