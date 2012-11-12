@@ -68,7 +68,6 @@ class Cart
             $products = Product::model()->findAll($criteria);
             
             foreach ($session['cart'] as $id => $data) {
-//                print_r($data); die;
                 foreach ($products as $product) {
                     if($id == $product->id) {
                         $res[$id]['model'] = $product;
@@ -79,6 +78,11 @@ class Cart
             return $res;
         }
         return 0;
+    }
+    public static function clear()
+    {
+        $session = Yii::app()->session;
+        unset($session['cart']);
     }
 
 }

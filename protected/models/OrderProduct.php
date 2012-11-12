@@ -1,18 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "users".
+ * This is the model class for table "orders_products".
  *
- * The followings are the available columns in table 'users':
+ * The followings are the available columns in table 'orders_products':
  * @property string $id
- * @property string $login
- * @property string $password
+ * @property string $product_id
+ * @property string $order_id
+ * @property double $price
+ * @property integer $count
+ *
+ * The followings are the available model relations:
+ * @property Orders $order
+ * @property Products $product
  */
-class User extends CActiveRecord
+class OrderProduct extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @return User the static model class
+	 * @param string $className active record class name.
+	 * @return OrderProduct the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -24,7 +31,7 @@ class User extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'users';
+		return 'orders_products';
 	}
 
 	/**
@@ -35,11 +42,13 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('login, password', 'required'),
-			array('login, password', 'length', 'max'=>64),
+			array('product_id, order_id, price, count', 'required'),
+			array('count', 'numerical', 'integerOnly'=>true),
+			array('price', 'numerical'),
+			array('product_id, order_id', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, login, password', 'safe', 'on'=>'search'),
+			array('id, product_id, order_id, price, count', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -51,6 +60,8 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'order' => array(self::BELONGS_TO, 'Orders', 'order_id'),
+			'product' => array(self::BELONGS_TO, 'Products', 'product_id'),
 		);
 	}
 
@@ -61,8 +72,10 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'login' => 'Login',
-			'password' => 'Password',
+			'product_id' => 'Product',
+			'order_id' => 'Order',
+			'price' => 'Price',
+			'count' => 'Count',
 		);
 	}
 
@@ -78,8 +91,10 @@ class User extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('login',$this->login,true);
-		$criteria->compare('password',$this->password,true);
+		$criteria->compare('product_id',$this->product_id,true);
+		$criteria->compare('order_id',$this->order_id,true);
+		$criteria->compare('price',$this->price);
+		$criteria->compare('count',$this->count);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
