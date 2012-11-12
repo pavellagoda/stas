@@ -54,5 +54,31 @@ class Cart
         }
         return 0;
     }
+    
+    public static function getProductsInfo()
+    {
+        $session = Yii::app()->session;
+        if (isset($session['cart']) && count($session['cart'])) {
+            $res = array();
+            
+            $list = array_keys($session['cart']);
+            $criteria=new CDbCriteria;
+            $criteria->addInCondition('id', $list);
+            
+            $products = Product::model()->findAll($criteria);
+            
+            foreach ($session['cart'] as $id => $data) {
+//                print_r($data); die;
+                foreach ($products as $product) {
+                    if($id == $product->id) {
+                        $res[$id]['model'] = $product;
+                        $res[$id]['count'] = $data['count'];
+                    }
+                }
+            }
+            return $res;
+        }
+        return 0;
+    }
 
 }

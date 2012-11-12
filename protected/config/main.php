@@ -30,13 +30,13 @@ return array(
         'mail' => array(
             'class' => 'ext.yii-mail.YiiMail',
             'transportType' => 'smtp',
-            'viewPath' => 'application.views.site',
+            'viewPath' => 'application.views.mailer',
             'logging' => true,
             'dryRun' => false,
             'transportOptions' => array(
                 'host' => 'smtp.gmail.com',
-                'username' => '',
-                'password' => '',
+                'username' => 'fakesmtptest@gmail.com',
+                'password' => 'pass4fake',
                 'port' => 465,
                 'encryption' => 'ssl'
             )
