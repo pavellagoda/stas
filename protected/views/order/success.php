@@ -1,6 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Products',
+	'Order'=>array('/order'),
+	'Success',
 );?>
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
 

@@ -29,15 +29,22 @@
             </div>
             <div class="right-part lineelement right">
                 <div class="wellcome-element">
-                    Добро пожаловать на на сайт!
+                    <img src="http://lorempixel.com/580/180/technics/"/>
                 </div>
             </div>
             <div class="clear"></div>
             <div class="mainbody">
                 <?php echo $content; ?>
             </div>
+            <div class="clear"></div>
             <div class="footer">
-
+                <ul id="footer-menu">
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/about">О нас</a></li>
+                    <li><a href="/contacts">Контакты</a></li>
+                    <li><a href="/payment">Оплата и доставка</a></li>
+                    <div class="clear"></div>
+                </ul>
             </div>
         </div>
     </body>

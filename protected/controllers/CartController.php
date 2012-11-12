@@ -12,7 +12,10 @@ class CartController extends Controller
                     ),
                 ));
         $this->render('index', array(
-            'data' => $dataProvider));
+            'data' => $dataProvider,
+            'sum' => Cart::getSum(),
+            )
+        );
     }
 
     private function prepareCart()

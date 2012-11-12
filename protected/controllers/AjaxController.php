@@ -82,7 +82,8 @@ class AjaxController extends Controller
                 }
             }
         }
-        echo Cart::getCountElements();
+        $result = array('cart' => Cart::getCountElements(), 'sum' => Cart::getSum());
+        echo CJSON::encode($result);
     }
 
 }

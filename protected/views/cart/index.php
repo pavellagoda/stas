@@ -8,7 +8,12 @@
                     <th>Производитель</th>
                     <th>Цена за шт, грн</th>
                     <th>Количество</th>
-                    <th>Общая цена, грн</th>
+                    <th>Цена, грн</th>
+                    <th>
+                        Общая сумма<br/>
+                        (<span class="total-sum">'.$sum.'</span> грн)<br/>
+                        <a class="total-sum-order btn btn-warning" href="/order">Заказать <i class="icon-ok icon-white"></i></a>
+                    </th>
                 </tr>
             </thead>
             <tbody>
