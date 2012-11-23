@@ -1,3 +1,4 @@
+Номер заказа: <?php echo $model_order_id; ?><br/>
 Имя: <?php echo $post['username']; ?><br/>
 Email: <?php echo $post['email']; ?><br/>
 Телефон: <?php echo $post['telephone']; ?><br/>

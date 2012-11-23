@@ -9,6 +9,7 @@ class OrderController extends Controller
             $this->redirect($this->createUrl('/cart'));
         }
         $model = new OrderForm();
+        $model_order = false;
         if (isset($_POST['OrderForm'])) {
             $model->attributes = $_POST['OrderForm'];
             if ($model->validate()) {
@@ -42,7 +43,11 @@ class OrderController extends Controller
                 $message = new YiiMailMessage();
                 $message->view = 'order';
 
-                $message->setBody(array('post' => $_POST['OrderForm'], 'products' => $products_info), 'text/html');
+                $message->setBody(array(
+                            'post' => $_POST['OrderForm'], 
+                            'products' => $products_info,
+                            'model_order_id' => $model_order->id
+                        ), 'text/html');
 
                 $message->subject = 'Заказ №'.$model_order->id;
                 
@@ -63,14 +68,15 @@ class OrderController extends Controller
         Yii::app()->clientScript->registerScriptFile('/js/jquery.maskedinput-1.3.js', CClientScript::POS_HEAD);
         Yii::app()->clientScript->registerScriptFile('/js/use-mask.js', CClientScript::POS_HEAD);
         $this->render('index', array(
-            'model' => $model
+            'model' => $model,
             )
         );
     }
 
     public function actionSuccess()
     {
-        $this->render('success');
+        $id = Order::model()->find(array('order' => 't.id DESC', 'limit' => 1))->id;
+        $this->render('success', array('id' => $id));
     }
 
 }
