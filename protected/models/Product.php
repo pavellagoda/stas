@@ -18,6 +18,8 @@
 class Product extends CActiveRecord
 {
 
+    public $firm_name;
+    
     /**
      * Returns the static model of the specified AR class.
      * @return Product the static model class
@@ -58,7 +60,7 @@ class Product extends CActiveRecord
                 'message' => "Выберите {attribute}"),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, title, description, image_extension, price, firm_id', 'safe', 'on' => 'search'),
+            array('id, title, description, image_extension, price, firm_id, firm_name', 'safe', 'on' => 'search'),
         );
     }
 
@@ -101,19 +103,29 @@ class Product extends CActiveRecord
 
         $criteria = new CDbCriteria;
 
-        $criteria->compare('id', $this->id, true);
+        $criteria->compare('t.id', $this->id, true);
         $criteria->compare('title', $this->title, true);
         $criteria->compare('description', $this->description, true);
         $criteria->compare('image_extension', $this->image_extension, true);
         $criteria->compare('price', $this->price, true);
         $criteria->compare('firm_id', $this->firm_id, true);
         $criteria->compare('status', 'active', true);
+        $criteria->compare('firm.name', $this->firm_name, true );
         $criteria->with = array('firm');
 
         return new CActiveDataProvider($this, array(
                     'criteria' => $criteria,
                     'pagination' => array(
                         'pageSize' => $perPage,
+                    ),
+                    'sort'=>array(
+                        'attributes'=>array(
+                            'firm_name'=>array(
+                                'asc'=>'firm.name',
+                                'desc'=>'firm.name DESC',
+                            ),
+                            '*',
+                        ),
                     ),
                 ));
     }

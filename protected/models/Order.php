@@ -61,7 +61,7 @@ class Order extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'ordersProducts' => array(self::HAS_MANY, 'OrdersProducts', 'order_id'),
+			'ordersProducts' => array(self::HAS_MANY, 'OrderProduct', 'order_id'),
 		);
 	}
 
@@ -71,12 +71,12 @@ class Order extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'telephone' => 'Telephone',
+			'id' => '№',
+			'name' => 'Имя',
+			'telephone' => 'Телефон',
 			'email' => 'Email',
 			'comment' => 'Comment',
-			'status' => 'Status',
+			'status' => 'Статус',
 		);
 	}
 
@@ -102,4 +102,16 @@ class Order extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        public function getProductList() {
+            $orders_list = $this->ordersProducts;
+            if(!count($orders_list))
+                return 'Нет выбраных товаров';
+            $output = '<ol>';
+            foreach ($orders_list as $order) {
+                $output.='<li>'.$order->product->title.' ('.$order->count.' шт)'.'</li>';
+            }
+            $output.='</ol>';
+            return $output;
+        }
 }
