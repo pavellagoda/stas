@@ -35,7 +35,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status',array('size'=>8,'maxlength'=>8)); ?>
+		<?php echo $form->dropDownList($model,'status',array('pending' => 'В ожидании', 'rejected' => 'Отклонен', 'complete' => 'Завершен')); ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 

@@ -75,7 +75,7 @@ class Order extends CActiveRecord
 			'name' => 'Имя',
 			'telephone' => 'Телефон',
 			'email' => 'Email',
-			'comment' => 'Comment',
+			'comment' => 'Комментарий',
 			'status' => 'Статус',
 		);
 	}
