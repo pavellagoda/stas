@@ -103,15 +103,22 @@ class Order extends CActiveRecord
 		));
 	}
         
-        public function getProductList() {
+        public function getProductList($use_html = true) {
             $orders_list = $this->ordersProducts;
             if(!count($orders_list))
                 return 'Нет выбраных товаров';
             $output = '<ol>';
+            $res_array = array();
             foreach ($orders_list as $order) {
+                $tmp = array(
+                    'count' => $order->count,
+                    'product' => $order->product,
+                    'price' => $order->price
+                );
+                $res_array[] = $tmp;
                 $output.='<li>'.$order->product->title.' ('.$order->count.' шт)'.'</li>';
             }
             $output.='</ol>';
-            return $output;
+            return $use_html?$output:$res_array;
         }
 }

@@ -1,5 +1,5 @@
 <div class="form">
-
+<?php //print_r($model->getProductList(false)); die; ?>
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'order-form',
 	'enableAjaxValidation'=>false,
