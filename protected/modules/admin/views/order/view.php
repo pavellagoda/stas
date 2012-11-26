@@ -21,6 +21,7 @@ $this->menu=array(
 		'email',
 		'comment',
 		'status',
+		'created_ts',
                 array(
                         'name'=>'Товары',
                         'type'=>'html',

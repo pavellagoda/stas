@@ -88,8 +88,16 @@ class OrderController extends AdminController
 		if(isset($_POST['Order']))
 		{
 			$model->attributes=$_POST['Order'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()) {
+                            foreach ($_POST['count'] as $order_product_id => $count) {
+                                $tmp_model = OrderProduct::model()->findByPk($order_product_id);
+                                if($tmp_model->count != $count) {
+                                    $tmp_model->count = $count;
+                                    $tmp_model->save();
+                                }
+                            }
+                            $this->redirect(array('view','id'=>$model->id));
+                        }
 		}
 
 		$this->render('update',array(

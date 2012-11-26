@@ -10,6 +10,7 @@
  * @property string $email
  * @property string $comment
  * @property string $status
+ * @property string $created_ts
  *
  * The followings are the available model relations:
  * @property OrdersProducts[] $ordersProducts
@@ -49,7 +50,7 @@ class Order extends CActiveRecord
 			array('comment', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, telephone, email, comment, status', 'safe', 'on'=>'search'),
+			array('id, name, telephone, email, comment, status, created_ts', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -77,6 +78,7 @@ class Order extends CActiveRecord
 			'email' => 'Email',
 			'comment' => 'Комментарий',
 			'status' => 'Статус',
+			'created_ts' => 'Дата создания',
 		);
 	}
 
@@ -97,6 +99,7 @@ class Order extends CActiveRecord
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('comment',$this->comment,true);
 		$criteria->compare('status',$this->status,true);
+		$criteria->compare('created_ts',$this->created_ts,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -111,8 +114,9 @@ class Order extends CActiveRecord
             $res_array = array();
             foreach ($orders_list as $order) {
                 $tmp = array(
+                    'order_product_id' => $order->id,
                     'count' => $order->count,
-                    'product' => $order->product,
+                    'product_model' => $order->product,
                     'price' => $order->price
                 );
                 $res_array[] = $tmp;

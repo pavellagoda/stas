@@ -30,6 +30,7 @@ $('.search-form form').submit(function(){
 		'telephone',
 		'email',
 		'status',
+		'created_ts',
 		array(
                     'class'=>'CButtonColumn',
                     'template'=>'{view}{update}'

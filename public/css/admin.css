@@ -13,3 +13,7 @@
 .errorMessage {
     color: red;
 }
+
+.admin-product-list input {
+    width: 50px;
+}

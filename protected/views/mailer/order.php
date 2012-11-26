@@ -1,4 +1,5 @@
 Номер заказа: <?php echo $model_order_id; ?><br/>
+Дата и время заказа: <?php echo date('d.m.Y H:i:s',strtotime($model_order_time)); ?><br/>
 Имя: <?php echo $post['username']; ?><br/>
 Email: <?php echo $post['email']; ?><br/>
 Телефон: <?php echo $post['telephone']; ?><br/>

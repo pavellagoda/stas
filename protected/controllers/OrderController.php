@@ -8,6 +8,7 @@ class OrderController extends Controller
         if(Cart::getCountElements() == 0) {
             $this->redirect($this->createUrl('/cart'));
         }
+        
         $model = new OrderForm();
         $model_order = false;
         if (isset($_POST['OrderForm'])) {
@@ -37,7 +38,6 @@ class OrderController extends Controller
                 }
                 
                 $transaction->commit();
-                
                 Cart::clear();
                 
                 $message = new YiiMailMessage();
@@ -46,7 +46,8 @@ class OrderController extends Controller
                 $message->setBody(array(
                             'post' => $_POST['OrderForm'], 
                             'products' => $products_info,
-                            'model_order_id' => $model_order->id
+                            'model_order_id' => $model_order->id,
+                            'model_order_time' => Order::model()->findByPk($model_order->id)->created_ts
                         ), 'text/html');
 
                 $message->subject = 'Заказ №'.$model_order->id;

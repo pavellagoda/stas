@@ -42,6 +42,7 @@
                                 array('label' => 'Управление производителями', 'url' => $this->createUrl('firm/'), 'active' => $this->id == 'firm'),
                                 array('label' => 'Управление товарами', 'url' => $this->createUrl('product/'), 'active' => $this->id == 'product'),
                                 array('label' => 'Управление заказами', 'url' => $this->createUrl('order/'), 'active' => $this->id == 'order'),
+                                array('label' => 'Статистика', 'url' => $this->createUrl('statistic/'), 'active' => $this->id == 'statistic'),
                                 array('label' => 'Выйти (' . Yii::app()->user->name . ')', 'url' => array('/admin/default/logout'), 'visible' => !Yii::app()->user->isGuest)
                             ),
                             'htmlOptions' => array(
