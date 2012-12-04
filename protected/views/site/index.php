@@ -6,7 +6,7 @@
                 'firm', (isset($_GET['firm'])) ? $_GET['firm'] : '', CHtml::listData(Firm::model()->findAll(), 'id', 'name'), array(
             'class' => 'firm-filter',
             'separator' => '',
-            'template' => '<div class="firm-block">{input}{label}</div>',
+            'template' => '<div class="firm-block">{input} {label}</div>',
                 )
         );
         ?>
