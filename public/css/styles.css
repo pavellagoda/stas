@@ -147,8 +147,10 @@ input.items-count {
     width:165px;
 }
 
-.items .item:hover {
-    background-color: #eceff8;
+.items .item:hover .item-name a{
+    text-decoration: underline;
+    color:#005580;
+    -background-color: #eceff8;
 }
 
 .items .item .item-name, .items .item .item-price, .items .item a.btn {
