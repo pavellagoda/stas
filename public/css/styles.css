@@ -159,6 +159,9 @@ input.items-count {
     margin-top: 20px;
     display: block;
 }
+.items .item .item-name {
+    height: 90px;
+}
 
 a.total-sum-order {
     margin-top: 5px;
