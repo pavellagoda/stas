@@ -16,7 +16,8 @@ class AdminController extends Controller {
      */
 
     public function init() {
-
+        Yii::app()->clientScript->registerScriptFile('/js/tiny_mce/tiny_mce.js', CClientScript::POS_HEAD);
+        Yii::app()->clientScript->registerScriptFile('/js/texteditor.js', CClientScript::POS_HEAD);
     }
 
 

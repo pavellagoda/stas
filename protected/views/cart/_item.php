@@ -5,12 +5,12 @@
         CHtml::link(
                 CHtml::image(
                         Yii::app()->params['PRODUCT_IMAGE_LINK'] . '/' . $data['model']->id . '.' . $data['model']->image_extension, $data['model']->title, array('width' => '100px', 'height' => '100px')
-                ), $this->createUrl('products/view', array('id' => $data['model']->id))
+                ), $this->createUrl('products/view', array('id' => $data['model']->seo_url))
         );
         ?>
     </td>
     <td width="200px">
-        <?php echo CHtml::link($data['model']->title, $this->createUrl('products/view', array('id' => $data['model']->id))) ?>
+        <?php echo CHtml::link($data['model']->title, $this->createUrl('products/view', array('id' => $data['model']->seo_url))) ?>
         <p><?php echo $data['model']->description ?></p>
     </td>
     <td width="150px">

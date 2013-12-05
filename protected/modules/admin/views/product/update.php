@@ -11,6 +11,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Товарt <?php echo $model->title; ?></h1>
+<h1>Товар <?php echo $model->title; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -1,1 +1,1 @@
-Условия доставки и оплаты
+<?php echo Staticpage::model()->findByPk(2)->content ?>

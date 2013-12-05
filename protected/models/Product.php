@@ -9,7 +9,9 @@
  * @property string $description
  * @property string $image_extension
  * @property string $price
+ * @property string $seo_url
  * @property string $firm_id
+ * @property integer $is_new
  * @property string $status
  *
  * The followings are the available model relations:
@@ -36,6 +38,24 @@ class Product extends CActiveRecord
     {
         return 'products';
     }
+    
+    protected function beforeSave() {
+        if(parent::beforeSave()) {
+            if(!$this->isNewRecord) {
+                $this->seo_url = $this->id.'-'.Strings::titleToSeo($this->title);
+            }
+            return true;
+        }
+    }
+    
+    protected function afterSave() {
+        if(parent::afterSave()) {
+            if($this->isNewRecord) {
+                $this->save();
+            }
+            return true;
+        }
+    }
 
     /**
      * @return array validation rules for model attributes.
@@ -50,6 +70,7 @@ class Product extends CActiveRecord
             array('price', 'type', 'type'=>'float', 'message' => "Цена должна быть введена в формате HH,KK или HH.KK"),
             array('price', 'length', 'max' => 8),
             array('firm_id', 'length', 'max' => 11),
+            array('is_new', 'numerical', 'integerOnly'=>true),
             array(
                 'image_extension', 'file',
                 'types' => 'jpg, jpeg, png, gif',
@@ -60,7 +81,7 @@ class Product extends CActiveRecord
                 'message' => "Выберите {attribute}"),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, title, description, image_extension, price, firm_id, firm_name', 'safe', 'on' => 'search'),
+            array('id, title, description, image_extension, price, firm_id, firm_name, is_new', 'safe', 'on' => 'search'),
         );
     }
 
@@ -87,8 +108,9 @@ class Product extends CActiveRecord
             'description' => 'Описание',
             'image_extension' => 'Изображение',
             'price' => 'Цена',
-            'firm_id' => 'Производитель',
-            'firm.name' => 'Производитель',
+            'is_new' => 'Новинка',
+            'firm_id' => 'Жанр',
+            'firm.name' => 'Жанр',
         );
     }
 
@@ -109,6 +131,7 @@ class Product extends CActiveRecord
         $criteria->compare('image_extension', $this->image_extension, true);
         $criteria->compare('price', $this->price, true);
         $criteria->compare('firm_id', $this->firm_id, true);
+        $criteria->compare('is_new', $this->is_new, true);
         $criteria->compare('status', 'active', true);
         $criteria->compare('firm.name', $this->firm_name, true );
         $criteria->with = array('firm');

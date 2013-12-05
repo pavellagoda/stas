@@ -50,11 +50,13 @@ return array(
         'urlManager' => array(
             'urlFormat' => 'path',
             'rules' => array(
+                'products/<id:.+>' => 'products/view',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
                 'contacts'=>'site/contacts',
                 'about'=>'site/about',
+                'new'=>'site/new',
                 'payment'=>'site/payment',
             ),
             'showScriptName' => false,
@@ -62,10 +64,10 @@ return array(
         ),
         // uncomment the following to use a MySQL database
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=stas',
+            'connectionString' => 'mysql:host=109.87.136.229;dbname=stas',
             'emulatePrepare' => true,
-            'username' => 'root',
-            'password' => 'test',
+            'username' => 'dev',
+            'password' => 'pass4dev',
             'charset' => 'utf8',
         ),
         'errorHandler' => array(

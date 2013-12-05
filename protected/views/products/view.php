@@ -20,7 +20,7 @@
             <div class="fieldname lineelement">Цена: </div><div class="fieldvalue lineelement"><?php echo $model->price; ?> грн</div>
             <div class="clear"></div>
         </div>
-        
+
         <div class="field">
             <?php
             echo CHtml::ajaxLink(
@@ -30,9 +30,9 @@
             )
             ?>
         </div>
+        <div class="description">
+            <span>Описание:</span> <?php echo $model->description ?>
+        </div>
     </div>
     <div class="clear"></div>
-    <div class="description">
-        <span>Описание:</span> <?php echo $model->description ?>
-    </div>
 </div>

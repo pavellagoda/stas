@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8" />
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
@@ -39,10 +39,12 @@
                         $this->widget('zii.widgets.CMenu', array(
                             'items' => array(
                                 array('label' => 'Главная', 'url' => array('/admin'), 'active' => $this->id == 'default'),
-                                array('label' => 'Управление производителями', 'url' => $this->createUrl('firm/'), 'active' => $this->id == 'firm'),
-                                array('label' => 'Управление товарами', 'url' => $this->createUrl('product/'), 'active' => $this->id == 'product'),
-                                array('label' => 'Управление заказами', 'url' => $this->createUrl('order/'), 'active' => $this->id == 'order'),
+                                array('label' => 'Жанры', 'url' => $this->createUrl('firm/'), 'active' => $this->id == 'firm'),
+                                array('label' => 'Товары', 'url' => $this->createUrl('product/'), 'active' => $this->id == 'product'),
+                                array('label' => 'Заказы', 'url' => $this->createUrl('order/'), 'active' => $this->id == 'order'),
+                                array('label' => 'Слайдер', 'url' => $this->createUrl('sliderimage/'), 'active' => $this->id == 'sliderimage'),
                                 array('label' => 'Статистика', 'url' => $this->createUrl('statistic/'), 'active' => $this->id == 'statistic'),
+                                array('label' => 'Страницы', 'url' => $this->createUrl('staticpage/'), 'active' => $this->id == 'staticpage'),
                                 array('label' => 'Выйти (' . Yii::app()->user->name . ')', 'url' => array('/admin/default/logout'), 'visible' => !Yii::app()->user->isGuest)
                             ),
                             'htmlOptions' => array(
@@ -83,6 +85,5 @@
             <?php echo $content; ?>
 
         </div> <!-- /container -->
-        <script type="text/javascript" src="/bootstrap/js/bootstrap-tooltip.js" ></script>
     </body>
 </html>

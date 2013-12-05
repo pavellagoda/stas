@@ -16,7 +16,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50, 'class'=>'tiny')); ?>
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 
@@ -35,6 +35,12 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'firm_id'); ?>
 		<?php echo $form->dropDownList($model,'firm_id', CHtml::listData(Firm::model()->findAll(), 'id', 'name')); ?>
+		<?php echo $form->error($model,'firm_id'); ?>
+	</div>
+        
+	<div class="row">
+		<?php echo $form->labelEx($model,'is_new'); ?>
+		<?php echo $form->checkBox($model,'is_new'); ?>
 		<?php echo $form->error($model,'firm_id'); ?>
 	</div>
 

@@ -1,1 +1,1 @@
-Контакты
+<?php echo Staticpage::model()->findByPk(1)->content ?>

@@ -3,12 +3,12 @@
     echo
     CHtml::link(
             CHtml::image(
-                    Yii::app()->params['PRODUCT_IMAGE_LINK'] . '/' . $data->id . '.' . $data->image_extension, $data->title, array('width' => '160px', 'height' => '160px')
-            ), $this->createUrl('products/view', array('id' => $data->id))
+                    Yii::app()->params['PRODUCT_IMAGE_LINK'] . '/' . $data->id . '.' . $data->image_extension, $data->title
+            ), $this->createUrl('products/view', array('id' => $data->seo_url))
     );
     ?>
     <div class="item-name">
-        <?php echo $data->firm->name ?>, <?php echo CHtml::link($data->title, $this->createUrl('products/view', array('id' => $data->id))) ?>
+        <?php echo $data->firm->name ?>, <?php echo CHtml::link($data->title, $this->createUrl('products/view', array('id' => $data->seo_url))) ?>
     </div>
     <div class="item-price">
         Цена: <?php echo $data->price ?> грн

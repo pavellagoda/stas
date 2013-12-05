@@ -22,12 +22,14 @@ class Controller extends CController
     public function init()
     {
         Yii::app()->clientScript->registerCssFile('/bootstrap/css/bootstrap.css', 'screen, projection');
+        Yii::app()->clientScript->registerCssFile('/css/jcarousel.basic.css', 'screen, projection');
+        Yii::app()->clientScript->registerScriptFile('/js/jquery.jcarousel.js', CClientScript::POS_HEAD);
         $cartCount = Cart::getCountElements();
         $this->menu = array(
             array('label' => 'Главная', 'url' => '/'),
-            array('label' => 'О нас', 'url' => $this->createUrl('/about')),
-            array('label' => 'Контакты', 'url' => $this->createUrl('/contacts')),
+            array('label' => 'Новинки', 'url' => $this->createUrl('/new')),
             array('label' => 'Оплата и доставка', 'url' => $this->createUrl('/payment')),
+            array('label' => 'Контакты', 'url' => $this->createUrl('/contacts')),
             array('label' => 'Корзина('.$cartCount.')', 'url' => $this->createUrl('/cart'), 'itemOptions' => array('class' => 'cart')),
         );
     }

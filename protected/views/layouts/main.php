@@ -28,10 +28,25 @@
                 <div class="logo-element"></div>
             </div>
             <div class="right-part lineelement right">
-                <div class="wellcome-element">
-                    <img src="http://lorempixel.com/580/180/technics/"/>
+                <div class="jcarousel-wrapper">
+                    <div class="jcarousel">
+                        <ul>
+                            <?php foreach (SliderImage::model()->findAll() as $image): ?>
+                            <li><img width="580" height="180" src="<?php echo Yii::app()->params['SLIDER_IMAGE_LINK'].'/'.$image->id.'.'.$image->extension ?>"/></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
+            <script>
+                $('.jcarousel').jcarousel({
+                    wrap: 'circular',
+                }).jcarouselAutoscroll({
+                    interval: 5000,
+                    target: '+=1',
+                    autostart: true
+                });
+            </script>
             <div class="clear"></div>
             <div class="mainbody">
                 <?php echo $content; ?>
@@ -40,9 +55,9 @@
             <div class="footer">
                 <ul id="footer-menu">
                     <li><a href="/">Главная</a></li>
-                    <li><a href="/about">О нас</a></li>
-                    <li><a href="/contacts">Контакты</a></li>
+                    <li><a href="/new">Новинки</a></li>
                     <li><a href="/payment">Оплата и доставка</a></li>
+                    <li><a href="/contacts">Контакты</a></li>
                     <div class="clear"></div>
                 </ul>
             </div>

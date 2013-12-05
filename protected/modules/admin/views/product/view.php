@@ -19,9 +19,14 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'title',
-		'description',
-		'image_extension',
+		'description' => array(
+                    'name' => 'description',
+                    'type' => 'html'
+                ),
 		'price',
-		'firm_id',
+		'firm_id' => array(
+                    'name' => 'firm_id',
+                    'value' => $model->firm->name
+                ),
 	),
 )); ?>

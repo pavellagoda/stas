@@ -5,22 +5,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Список товаров', 'url'=>array('index')),
 	array('label'=>'Создать товар', 'url'=>array('create')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('product-grid', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
 <h1>Управление товарами</h1>
@@ -33,7 +20,11 @@ $('.search-form form').submit(function(){
 		'id',
 		'title',
 		'price',
-                array( 'name'=>'firm_name', 'value'=>'$data->firm->name' ),
+                array( 'name'=>'firm_name', 'value'=>'$data->firm->name', 'header' => 'Жанр' ),
+                'is_new' => array(
+                    'name' => 'is_new',
+                    'value' => '$data->is_new?"Да":"Нет"'
+                ),
 		array(
 			'class'=>'CButtonColumn',
 		),
