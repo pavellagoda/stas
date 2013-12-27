@@ -26,7 +26,7 @@ $this->menu=array(
 		'price',
 		'firm_id' => array(
                     'name' => 'firm_id',
-                    'value' => $model->firm->name
+                    'value' => implode(',',$model->getFirmNames())
                 ),
 	),
 )); ?>

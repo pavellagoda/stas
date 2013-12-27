@@ -8,7 +8,7 @@
     );
     ?>
     <div class="item-name">
-        <?php echo $data->firm->name ?>, <?php echo CHtml::link($data->title, $this->createUrl('products/view', array('id' => $data->seo_url))) ?>
+        <?php //echo $data->firm->name.',' ?> <?php echo CHtml::link($data->title, $this->createUrl('products/view', array('id' => $data->seo_url))) ?>
     </div>
     <div class="item-price">
         Цена: <?php echo $data->price ?> грн

@@ -13,7 +13,7 @@
             <div class="clear"></div>
         </div>
         <div class="field">
-            <div class="fieldname lineelement">Производитель: </div><div class="fieldvalue lineelement"><?php echo $model->firm->name; ?></div>
+            <div class="fieldname lineelement">Жанр: </div><div class="fieldvalue lineelement"><?php echo implode(',', $model->getFirmNames()); ?></div>
             <div class="clear"></div>
         </div>
         <div class="field">

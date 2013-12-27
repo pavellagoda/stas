@@ -20,7 +20,7 @@ $this->menu=array(
 		'id',
 		'title',
 		'price',
-                array( 'name'=>'firm_name', 'value'=>'$data->firm->name', 'header' => 'Жанр' ),
+                array( 'name'=>'firm_name', 'value'=>'implode(",",$data->getFirmNames())', 'header' => 'Жанр' ),
                 'is_new' => array(
                     'name' => 'is_new',
                     'value' => '$data->is_new?"Да":"Нет"'

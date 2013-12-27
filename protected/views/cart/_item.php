@@ -14,7 +14,7 @@
         <p><?php echo $data['model']->description ?></p>
     </td>
     <td width="150px">
-        <p><?php echo $data['model']->firm->name ?></p>
+        <p><?php echo implode(',', $data['model']->getFirmNames()) ?></p>
     </td>
     <td width="150px">
         <p><?php echo $data['model']->price ?></p>

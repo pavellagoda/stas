@@ -52,6 +52,7 @@ class Firm extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'products' => array(self::MANY_MANY, 'Product', 'products_firms(firm_id, product_id)'),
 		);
 	}
 

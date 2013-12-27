@@ -33,7 +33,9 @@ class SiteController extends Controller {
 
         if ($request->isAjaxRequest) {
             if ($request->getParam('firm')) {
-                $criteria->addInCondition('firm_id', $request->getParam('firm'));
+                $criteria->join = 'INNER JOIN products_firms pf ON pf.product_id = t.id';
+                $criteria->addInCondition('pf.firm_id', $request->getParam('firm'));
+                $criteria->group = 'id';
             }
 
             if (trim($request->getParam('search')) !== '') {

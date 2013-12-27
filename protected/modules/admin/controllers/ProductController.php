@@ -128,6 +128,10 @@ class ProductController extends AdminController
     {
         if (isset($_POST['Product'])) {
 
+            
+            if(!isset($_POST['Product']['firms']))
+                $_POST['Product']['firms'] = array();
+            
             $old_extension = $model->image_extension;
             
             $is_image = false;
@@ -136,7 +140,9 @@ class ProductController extends AdminController
 
             if ($_FILES['Product']['name']['image_extension']) {
                 $is_image = true;
-                $extention = end(explode('.', $_FILES['Product']['name']['image_extension']));
+                
+                $els = explode('.', $_FILES['Product']['name']['image_extension']); 
+                $extention = end($els);
                 $_POST['Product']['image_extension'] = $extention;
             }
 
