@@ -26,9 +26,15 @@ class SiteController extends Controller {
 
     private function getDataProvider($is_new = false) {
         $criteria = new CDbCriteria;
+        
+        $criteria->addCondition('`status` = "active"');
+        
+        
         if ($is_new)
             $criteria->addCondition('is_new = 1');
 
+        
+        
         $request = Yii::app()->request;
 
         if ($request->isAjaxRequest) {
