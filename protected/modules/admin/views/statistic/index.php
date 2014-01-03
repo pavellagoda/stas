@@ -13,7 +13,7 @@ $this->breadcrumbs = array(
         <tr>
             <th>#</th>
             <th>Название товара</th>
-            <th>Производитель</th>
+            <th>Жанр</th>
             <th>Текущая цена, грн</th>
             <th>Количество заказов</th>
         </tr>
@@ -23,7 +23,7 @@ $this->breadcrumbs = array(
             <tr>
                 <td><?php echo $i + 1 ?></td>
                 <td><?php echo $product['title'] ?></td>
-                <td><?php echo $product['firm_name'] ?></td>
+                <td><?php echo implode(',',Product::model()->findByPk($product['product_id'])->getFirmNames())  ?></td>
                 <td><?php echo $product['price'] ?></td>
                 <td><?php echo $product['count'] ?></td>
             </tr>
