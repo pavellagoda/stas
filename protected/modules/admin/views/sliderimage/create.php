@@ -8,7 +8,7 @@ $this->breadcrumbs = array(
 );
 
 $this->menu = array(
-    array('label' => 'List SliderImage', 'url' => array('index')),
+    array('label' => 'Список картинок', 'url' => array('index')),
 );
 ?>
 
